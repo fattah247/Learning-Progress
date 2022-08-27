@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Try-fb-01' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Try-fb-01
+  pod 'Firebase/Database'
+
+  target 'Try-fb-01Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Try-fb-01UITests' do
+    # Pods for testing
+  end
+
+end

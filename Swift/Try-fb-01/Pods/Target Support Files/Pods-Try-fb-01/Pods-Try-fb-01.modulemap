@@ -1,0 +1,6 @@
+framework module Pods_Try_fb_01 {
+  umbrella header "Pods-Try-fb-01-umbrella.h"
+
+  export *
+  module * { export * }
+}
