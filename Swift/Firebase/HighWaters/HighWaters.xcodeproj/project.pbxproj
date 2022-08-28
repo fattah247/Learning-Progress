@@ -16,6 +16,7 @@
 		F918EDCB28BB774A0069C006 /* HighWatersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918EDCA28BB774A0069C006 /* HighWatersTests.swift */; };
 		F918EDD528BB774A0069C006 /* HighWatersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918EDD428BB774A0069C006 /* HighWatersUITests.swift */; };
 		F918EDD728BB774A0069C006 /* HighWatersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918EDD628BB774A0069C006 /* HighWatersUITestsLaunchTests.swift */; };
+		F918EDE428BB972B0069C006 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = F918EDE328BB972B0069C006 /* plus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F918EDD028BB774A0069C006 /* HighWatersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HighWatersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F918EDD428BB774A0069C006 /* HighWatersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighWatersUITests.swift; sourceTree = "<group>"; };
 		F918EDD628BB774A0069C006 /* HighWatersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighWatersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F918EDE328BB972B0069C006 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F918EDBC28BB77490069C006 /* Assets.xcassets */,
 				F918EDBE28BB77490069C006 /* LaunchScreen.storyboard */,
 				F918EDC128BB77490069C006 /* Info.plist */,
+				F918EDE328BB972B0069C006 /* plus.png */,
 			);
 			path = HighWaters;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				F918EDC028BB77490069C006 /* LaunchScreen.storyboard in Resources */,
 				F918EDBD28BB77490069C006 /* Assets.xcassets in Resources */,
 				F918EDBB28BB77480069C006 /* Main.storyboard in Resources */,
+				F918EDE428BB972B0069C006 /* plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

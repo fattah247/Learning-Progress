@@ -37,7 +37,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //Updating the location
     self.locationManager.startUpdatingLocation()
 
+    
+    setupUI()
     // Do any additional setup after loading the view.
+  }
+  
+  private func setupUI(){
+    let addFloodButton = UIButton(frame: CGRect.zero)
+    addFloodButton.setImage(UIImage(named:"plus"), for: .normal)
+    
+    addFloodButton.addTarget(self, action: #selector(addFloodAnnotationButtonPressed), for: .touchUpInside)
+    addFloodButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    self.view.addSubview(addFloodButton)
+    addFloodButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    addFloodButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -55).isActive = true
+    addFloodButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+    addFloodButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
+  }
+  
+  @objc func addFloodAnnotationButtonPressed(sender: Any?){
+    
+    if let location = self.locationManager.location{
+      let floodAnnotation = MKPointAnnotation()
+      floodAnnotation.coordinate = location.coordinate
+      self.mapView.addAnnotation(floodAnnotation)
+    }
+    print("addFloodAnnotationButtonPressed")
   }
 
   //MARK: - to Zoom out to the location
