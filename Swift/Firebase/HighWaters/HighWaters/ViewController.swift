@@ -43,24 +43,46 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
   }
   
   private func setupUI(){
-    let addFloodButton = UIButton(frame: CGRect.zero)
+    
+    //To Make a Button
+    let addFloodButton = UIButton(frame: CGRect.zero) //CGRect.zero means doesn't have width and height
+    
+    //Setting up the button using image
     addFloodButton.setImage(UIImage(named:"plus"), for: .normal)
     
+    //it's what would happen if button is clicked
     addFloodButton.addTarget(self, action: #selector(addFloodAnnotationButtonPressed), for: .touchUpInside)
-    addFloodButton.translatesAutoresizingMaskIntoConstraints = false
     
+    //To say that the coder that would create the constraint for the button
+    addFloodButton.translatesAutoresizingMaskIntoConstraints = false
+   
+    //To make the View ->But not yet having width and height
     self.view.addSubview(addFloodButton)
+    
+    
+    //MAKE THE Autolayout
+    
+    //Anchor to sides
     addFloodButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     addFloodButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -55).isActive = true
+    
+    //Width and Height
     addFloodButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
     addFloodButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
   }
   
+  //It's what should button do, if pressed
   @objc func addFloodAnnotationButtonPressed(sender: Any?){
     
+    //To Get the location
     if let location = self.locationManager.location{
+      //Properties of Location Manager is to retrieve recent location
+      
+      //To make Annotation from mapKit
       let floodAnnotation = MKPointAnnotation()
+      //place the annotation on the coordinate
       floodAnnotation.coordinate = location.coordinate
+      //View it on the map
       self.mapView.addAnnotation(floodAnnotation)
     }
     print("addFloodAnnotationButtonPressed")
