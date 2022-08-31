@@ -24,8 +24,11 @@ struct Flood{
 
 extension Flood{
   init?(dictionary: [String:Any]){
+    
+    //State the format
     guard let latitude = dictionary["latitude"] as? Double,
             let longitude = dictionary["longitude"] as? Double else {
+      //Returning the Nil if it fails
       return nil
     }
     self.latitude = latitude
