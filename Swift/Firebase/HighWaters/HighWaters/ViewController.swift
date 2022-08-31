@@ -14,21 +14,31 @@ import FirebaseDatabase
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
   @IBOutlet weak var mapView: MKMapView!
   
+  //Type of Database reference from firebase database
   private var rootRef: DatabaseReference!
-  private var locationManager : CLLocationManager!
+  private var locationManager: CLLocationManager!
+  
+  /*
+  Counting the flood,
+  but it would be reset everytime the cycle ends
+   */
+//  private var floodCounter: Int = 0
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
+    //To make sure that rootRef is pointing to database reference
+    //Using this root reference, we can create different nodes on firebase
     self.rootRef = Database.database().reference()
     
     self.locationManager = CLLocationManager()
     self.locationManager.delegate = self
     
-    //Best-> going to work really hard to find location
-    //Will impact on memory and battery life
+    /*
+    Best-> going to work really hard to find location,
+    And will impact on memory and battery life
+     */
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
     //None-> We don't care where we should start to find the location.
@@ -43,23 +53,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //Updating the location
     self.locationManager.startUpdatingLocation()
 
-    
-    setupUI()
     // Do any additional setup after loading the view.
+    setupUI()
     
+    //Retrieve data from Firebase, and display it on map control
     populateFloodedRegions()
   }
   
+    //MARK: - Retrieve and Annotate from Firebase
   private func populateFloodedRegions(){
-    let floodedRegionRef = self.rootRef.child("flooded-regions")
     
+    //MARK: Trying to Fetch all the flooded regions, and display it on Map
+    
+    //Use root reference to point the node on which we want to create an observation
+    let floodedRegionRef = self.rootRef.child("flooded-regions")
+    //to observe
+    /*
+     The are many things to observe on, but in this case we use the value of the node
+     that we observe.
+     Once we observe the flooded regions, when we add a new node, deleting a node,
+     renaming a node, and updating a node, we'll get the notification (even at the start)
+     */
     floodedRegionRef.observe(.value){ snapshot in
       
+      //Not the best approach
+      self.mapView.removeAnnotations(self.mapView.annotations)
       
+      //Capture values of the snapshot as dictionary
       let floodDictionaries = snapshot.value as? [String:Any] ?? [:]
       
+      //MARK: iterate over the dictionary
       for (key, _) in floodDictionaries{
-        
+        //
         if let floodDict = floodDictionaries[key] as? [String:Any]{
           
           if let flood = Flood(dictionary: floodDict){
@@ -107,10 +132,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     addFloodButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
   }
   
-  //It's what should button do, if pressed
+  // MARK: - What button does, if pressed
   @objc func addFloodAnnotationButtonPressed(sender: Any?){
     
-    //To Get the location
+    //MARK: To Get the location
     if let location = self.locationManager.location{
       //Properties of Location Manager is to retrieve recent location
       
@@ -121,17 +146,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       //View it on the map
       self.mapView.addAnnotation(floodAnnotation)
       
+      //to get the location now (the coordinate)
       let coordinate = location.coordinate
+      //Make the flood object, with the coordinate's latitude and longitude
       let flood = Flood(latitude: coordinate.latitude, longitude: coordinate.longitude)
       
+      //MARK: TO FIREBASE
+      //Creating root object, especially the child
       let floodedRegionRef = self.rootRef.child("flooded-regions")
+      /*
+      Make the child from root FloodedRegion by ID that is automatically generated.
+      childByAutoId() -> makes automatic generated id
+      Id could be made manually, but if there is the same id, the value in firebase would be replaced
+       */
       let floodRef = floodedRegionRef.childByAutoId()
+      
+//      let floodRef = floodedRegionRef.child("flood\(self.floodCounter)")
+      
+      //MARK: To set the value that is assigned to each ID
+      /*
+      Firebase is okay with strings, interger floats, double arrays, and dictionaries,
+      but not with custom struct or class
+      the we should convert flood struct into dictionary using toDictionary
+       */
       floodRef.setValue(flood.toDictionary())
+      
+      //adding the flood count, so the id won't be the same
+//      self.floodCounter += 1
     }
     print("addFloodAnnotationButtonPressed")
   }
+  
 
-  //MARK: - to Zoom out to the location
+  //MARK: - To Zoom out to the location
   //will update when the person is moving
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     //to get if the konstan is already wrapped
@@ -145,7 +192,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       //Will set the center as the coordinate and also the span
       let region = MKCoordinateRegion(center: coordinate, span: span)
       //Will change the view to region
-      self.mapView.setRegion(region, animated: true)
+//      self.mapView.setRegion(region, animated: true)
     }
   }
 }
