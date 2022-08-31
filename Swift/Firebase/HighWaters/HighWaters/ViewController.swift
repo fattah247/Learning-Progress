@@ -46,6 +46,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     setupUI()
     // Do any additional setup after loading the view.
+    
+    populateFloodedRegions()
+  }
+  
+  private func populateFloodedRegions(){
+    let floodedRegionRef = self.rootRef.child("flooded-regions")
+    
+    floodedRegionRef.observe(.value){ snapshot in
+      
+      
+      let floodDictionaries = snapshot.value as? [String:Any] ?? [:]
+      
+      for (key, _) in floodDictionaries{
+        
+        if let floodDict = floodDictionaries[key] as? [String:Any]{
+          
+          if let flood = Flood(dictionary: floodDict){
+            
+            DispatchQueue.main.async {
+              let floodAnnotation = MKPointAnnotation()
+              floodAnnotation.coordinate = CLLocationCoordinate2D(latitude: flood.latitude, longitude: flood.longitude)
+              
+              self.mapView.addAnnotation(floodAnnotation)
+            }
+          }
+        }
+      }
+      
+    }
+    
   }
   
   private func setupUI(){
@@ -95,8 +125,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       let flood = Flood(latitude: coordinate.latitude, longitude: coordinate.longitude)
       
       let floodedRegionRef = self.rootRef.child("flooded-regions")
-      let floodRef = floodedRegionRef.child("flood1")
- 
+      let floodRef = floodedRegionRef.childByAutoId()
       floodRef.setValue(flood.toDictionary())
     }
     print("addFloodAnnotationButtonPressed")
