@@ -55,6 +55,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     floodedRegionRef.observe(.value){ snapshot in
       
+      //Not the best approach
+      self.mapView.removeAnnotations(self.mapView.annotations)
+      
       
       let floodDictionaries = snapshot.value as? [String:Any] ?? [:]
       
@@ -145,7 +148,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       //Will set the center as the coordinate and also the span
       let region = MKCoordinateRegion(center: coordinate, span: span)
       //Will change the view to region
-      self.mapView.setRegion(region, animated: true)
+//      self.mapView.setRegion(region, animated: true)
     }
   }
 }
