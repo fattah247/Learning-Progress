@@ -7,15 +7,20 @@
 
 import Foundation
 
+
+//MARK: - Will represent Flood Object
+
+//So when we add things, we could just add dictionary with key value pairs, and give that information to firebase
 struct Flood{
   var latitude: Double
   var longitude: Double
   
-  
+  //Change struct into dictionary
   func toDictionary() -> [String:Any]{
     return ["latitude":self.latitude, "longitude":self.longitude]
   }
 }
+
 
 extension Flood{
   init?(dictionary: [String:Any]){
