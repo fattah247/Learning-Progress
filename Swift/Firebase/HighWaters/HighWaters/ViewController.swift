@@ -8,15 +8,21 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseCore
+import FirebaseDatabase
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
   @IBOutlet weak var mapView: MKMapView!
   
+  private var rootRef: DatabaseReference!
   private var locationManager : CLLocationManager!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
+    self.rootRef = Database.database().reference()
     
     self.locationManager = CLLocationManager()
     self.locationManager.delegate = self
@@ -84,6 +90,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       floodAnnotation.coordinate = location.coordinate
       //View it on the map
       self.mapView.addAnnotation(floodAnnotation)
+      
+      let coordinate = location.coordinate
+      let flood = Flood(latitude: coordinate.latitude, longitude: coordinate.longitude)
+      
+      let floodedRegionRef = self.rootRef.child("flooded-regions")
+      let floodRef = floodedRegionRef.child("flood1")
+ 
+      floodRef.setValue(flood.toDictionary())
     }
     print("addFloodAnnotationButtonPressed")
   }

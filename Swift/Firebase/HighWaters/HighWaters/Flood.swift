@@ -10,4 +10,9 @@ import Foundation
 struct Flood{
   var latitude: Double
   var longitude: Double
+  
+  
+  func toDictionary() -> [String:Any]{
+    return ["latitude":self.latitude, "longitude":self.longitude]
+  }
 }

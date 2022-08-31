@@ -7,6 +7,8 @@ target 'HighWaters' do
 
   # Pods for HighWaters
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
+
 
   target 'HighWatersTests' do
     inherit! :search_paths
