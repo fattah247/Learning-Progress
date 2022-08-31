@@ -16,3 +16,14 @@ struct Flood{
     return ["latitude":self.latitude, "longitude":self.longitude]
   }
 }
+
+extension Flood{
+  init?(dictionary: [String:Any]){
+    guard let latitude = dictionary["latitude"] as? Double,
+            let longitude = dictionary["longitude"] as? Double else {
+      return nil
+    }
+    self.latitude = latitude
+    self.longitude = longitude
+  }
+}
