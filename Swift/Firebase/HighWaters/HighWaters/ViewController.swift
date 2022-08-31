@@ -76,7 +76,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
      */
     floodedRegionRef.observe(.value){ snapshot in
       
-      //Not the best approach
+      //MARK: To Remove all the annotation before retrieving the data.
+      //But it's not the best approach
       self.mapView.removeAnnotations(self.mapView.annotations)
       
       //Capture values of the snapshot as dictionary
@@ -88,11 +89,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if let floodDict = floodDictionaries[key] as? [String:Any]{
           
           if let flood = Flood(dictionary: floodDict){
-            
             DispatchQueue.main.async {
+              //MARK: To Annotate
               let floodAnnotation = MKPointAnnotation()
+              //Annotate at the coordinate
               floodAnnotation.coordinate = CLLocationCoordinate2D(latitude: flood.latitude, longitude: flood.longitude)
-              
+              //To show the annotation
               self.mapView.addAnnotation(floodAnnotation)
             }
           }
@@ -103,6 +105,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
   }
   
+  
+  //MARK: SETUP UI
   private func setupUI(){
     
     //To Make a Button
