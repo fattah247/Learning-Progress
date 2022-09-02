@@ -8,5 +8,8 @@
   
 }
 
-+(UIColor *) colorFromHexString:(NSStri)
++(UIColor *) colorFromHexString:(NSString *)hexString;
++(UIColor *) colorForFilterSegmentedControlBackground;
++(UIColor *) colorForNAvigationBarBackground;
+
 @end
