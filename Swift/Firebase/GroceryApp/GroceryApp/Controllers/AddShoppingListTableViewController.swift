@@ -8,9 +8,29 @@
 import Foundation
 import UIKit
 
+protocol AddShoppingListTableViewContollerDelegate{
+  
+  //To save the shopping list
+  func addShoppingListTableViewControllerDidSave(controller: UIViewController, title: String)
+  //To cancel
+  func addShoppingListTableViewControllerDidCancel(controller: UIViewController)
+}
+
+
 class AddShoppingListTableViewController: UITableViewController{
+  
+  
   @IBOutlet weak var titleTextField: UITextField!
+  var delegate: AddShoppingListTableViewContollerDelegate!
+  
   @IBAction func save(){
+    if let title = self.titleTextField.text{
+      self.delegate.addShoppingListTableViewControllerDidSave(controller: self, title: title)
+    }
+  }
+  
+  @IBAction func cancel(){
+    self.delegate.addShoppingListTableViewControllerDidCancel(controller: self)
     
   }
 }
