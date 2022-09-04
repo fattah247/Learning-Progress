@@ -9,6 +9,7 @@ import Foundation
 
 class ShoppingList{
   var title: String!
+  var groceryItems: [GroceryItem] = [GroceryItem]()
   
   init(title: String){
     self.title = title 

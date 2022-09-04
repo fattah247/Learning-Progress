@@ -9,7 +9,7 @@ import Foundation
 
 class GroceryItem{
   var title: String!
-  var groceryItems: [GroceryItem] = [GroceryItem]()
+
   
   init(title: String){
     self.title = title
