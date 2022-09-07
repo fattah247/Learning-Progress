@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-protocol AddGroceryItemTableViewContollerDelegate{
+protocol AddGroceryItemTableViewControllerDelegate{
   
-  func addGrceryItemTableViewControllerDidCancel(controller: UIViewController)
+  func addGroceryItemTableViewControllerDidCancel(controller: UIViewController)
   func addGroceryItemTableViewControllerDidSave(controller: UIViewController, groceryItem: GroceryItem)
   
 }
 class AddGroceryItemTableViewController: UITableViewController{
   
   @IBOutlet weak var titleTextField: UITextField!
-  var delegate: AddGroceryItemTableViewContollerDelegate
+  var delegate: AddGroceryItemTableViewControllerDelegate!
   
   @IBAction func save(){
     if let title = self.titleTextField.text{
@@ -28,7 +28,7 @@ class AddGroceryItemTableViewController: UITableViewController{
   }
   
   @IBAction func cancel(){
-    self.delegate.addGrceryItemTableViewControllerDidCancel(controller: self)
+    self.delegate.addGroceryItemTableViewControllerDidCancel(controller: self)
     
     
   }

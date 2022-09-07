@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseCore
 
-class ShoppingListTableViewController: UITableViewController, AddShoppingListTableViewContollerDelegate{
+class ShoppingListTableViewController: UITableViewController, AddShoppingListTableViewControllerDelegate{
   
   private var shoppingLists = [ShoppingList]()
   
@@ -22,6 +22,7 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
   func addShoppingListTableViewControllerDidCancel(controller: UIViewController) {
     controller.dismiss(animated: true, completion: nil)
   }
+  
   func addShoppingListTableViewControllerDidSave(controller: UIViewController, title: String) {
     print(title)
     

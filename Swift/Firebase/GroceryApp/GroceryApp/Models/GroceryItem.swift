@@ -8,8 +8,8 @@
 import Foundation
 
 class GroceryItem{
+  
   var title: String!
-
   
   init(title: String){
     self.title = title
