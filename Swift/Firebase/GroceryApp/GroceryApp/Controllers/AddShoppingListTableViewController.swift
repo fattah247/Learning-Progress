@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol AddShoppingListTableViewContollerDelegate{
+protocol AddShoppingListTableViewControllerDelegate{
   
   //To save the shopping list
   func addShoppingListTableViewControllerDidSave(controller: UIViewController, title: String)
@@ -21,7 +21,7 @@ class AddShoppingListTableViewController: UITableViewController{
   
   
   @IBOutlet weak var titleTextField: UITextField!
-  var delegate: AddShoppingListTableViewContollerDelegate!
+  var delegate: AddShoppingListTableViewControllerDelegate!
   
   @IBAction func save(){
     if let title = self.titleTextField.text{
