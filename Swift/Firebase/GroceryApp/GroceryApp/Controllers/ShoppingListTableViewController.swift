@@ -8,29 +8,39 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseDatabase
 import FirebaseCore
 
 class ShoppingListTableViewController: UITableViewController, AddShoppingListTableViewControllerDelegate{
   
   private var shoppingLists = [ShoppingList]()
   
+  //Database reference
+  private var rootRef: DatabaseReference!
+  
   override func viewDidLoad(){
     super.viewDidLoad()
+    
+    self.rootRef = Database.database().reference()
+    
+    
     self.navigationController?.navigationBar.prefersLargeTitles = true
   }
+  
   
   func addShoppingListTableViewControllerDidCancel(controller: UIViewController) {
     controller.dismiss(animated: true, completion: nil)
   }
   
+  
   func addShoppingListTableViewControllerDidSave(controller: UIViewController, title: String) {
     print(title)
-    
     //To get the title of added shopping list
     let shoppingList = ShoppingList(title: title)
     //To add it to local variable
     self.shoppingLists.append(shoppingList)
     
+    //adding to Firebase
     //To close the card after save it.
     controller.dismiss(animated: true, completion: nil)
     
@@ -67,5 +77,4 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
       groceryItemsTVC.shoppingList = self.shoppingLists[indexPath.row]
     }
   }
-
 }

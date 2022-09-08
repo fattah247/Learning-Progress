@@ -8,6 +8,8 @@ target 'GroceryApp' do
   # Pods for GroceryApp
   pod 'Firebase/Core'
 
+  pod 'Firebase/Database'
+
   target 'GroceryAppTests' do
     inherit! :search_paths
     # Pods for testing
