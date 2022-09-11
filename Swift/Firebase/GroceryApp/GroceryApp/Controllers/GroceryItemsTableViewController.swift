@@ -8,12 +8,15 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseDatabase
 import FirebaseCore
 
 class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTableViewControllerDelegate{
   
   //Variable from the storybard before is passed to this variable
   var shoppingList: ShoppingList!
+  
+  private var rootRef: DatabaseReference!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,7 +32,9 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
     controller.dismiss(animated: true, completion: nil)
   }
   
+  
   func addGroceryItemTableViewControllerDidSave(controller: UIViewController, groceryItem: GroceryItem) {
+    
     
     self.shoppingList.groceryItems.append(groceryItem)
     controller.dismiss(animated: true, completion: nil)
@@ -38,6 +43,7 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
       self.tableView.reloadData()
     }
   }
+  
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete{
