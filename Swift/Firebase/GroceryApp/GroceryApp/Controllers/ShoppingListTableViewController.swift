@@ -14,7 +14,6 @@ import FirebaseCore
 class ShoppingListTableViewController: UITableViewController, AddShoppingListTableViewControllerDelegate{
   
   private var shoppingLists = [ShoppingList]()
-  
   //Database reference
   private var rootRef: DatabaseReference!
   
@@ -27,7 +26,14 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
     self.navigationController?.navigationBar.prefersLargeTitles = true
     //Populating the data in database
     populateShoppingLists()
-    
+  }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete{
+      let shoppingList = self.shoppingLists[indexPath.row]
+      let shoppingListRef = self.rootRef.child(shoppingList.title)
+      shoppingListRef.removeValue()
+    }
   }
   
   private func populateShoppingLists(){
@@ -69,8 +75,7 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
     //To add it to local variable
     self.shoppingLists.append(shoppingList)
     
-    //adding to Firebase
-    
+    //MARK: adding to Firebase
     //Giving reference
     let shoppingListRef = self.rootRef.child(shoppingList.title)
     //Make a node with dictionary
