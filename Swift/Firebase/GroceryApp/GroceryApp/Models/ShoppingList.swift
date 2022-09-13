@@ -33,7 +33,8 @@ class ShoppingList{
   //to convert object into dictionary representation
   
   func toDictionary() -> [String:Any]{
-    return ["title":self.title]
-    
+    return ["title":self.title, "groceryItems": self.groceryItems.map {groceryItem in
+      return groceryItem.toDictionary()
+    }]
   }
 }

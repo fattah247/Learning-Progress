@@ -25,6 +25,8 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
     self.title = shoppingList.title
     //to change the large title item
     self.navigationItem.largeTitleDisplayMode = .never
+    
+    self.rootRef = Database.database().reference()
   }
   
   func addGroceryItemTableViewControllerDidCancel(controller: UIViewController) {
@@ -32,19 +34,7 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
     controller.dismiss(animated: true, completion: nil)
   }
   
-  
-  func addGroceryItemTableViewControllerDidSave(controller: UIViewController, groceryItem: GroceryItem) {
-    
-    
-    self.shoppingList.groceryItems.append(groceryItem)
-    controller.dismiss(animated: true, completion: nil)
-    
-    DispatchQueue.main.async {
-      self.tableView.reloadData()
-    }
-  }
-  
-  
+  //MARK: -
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete{
       
@@ -54,10 +44,29 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
     }
   }
   
+  //MARK: - To Save
+  func addGroceryItemTableViewControllerDidSave(controller: UIViewController, groceryItem: GroceryItem) {
+    
+    let shoppingListRef = self.rootRef.child(self.shoppingList.title)
+    self.shoppingList.groceryItems.append(groceryItem)
+    
+    shoppingListRef.setValue(self.shoppingList.toDictionary())
+    
+    self.shoppingList.groceryItems.append(groceryItem)
+    controller.dismiss(animated: true, completion: nil)
+    
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
+  }
+  
   //MARK: - Function to display table View
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.shoppingList.groceryItems.count
   }
+  
+  
+  //MARK: -
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "GroceryItemTableViewCell", for: indexPath)
     
