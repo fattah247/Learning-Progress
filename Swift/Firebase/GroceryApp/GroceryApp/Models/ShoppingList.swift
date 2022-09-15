@@ -17,7 +17,7 @@ class ShoppingList{
     self.title = title
   }
   
-  init?(_ dictionary:[String:Any]){
+  init?(_ dictionary: [String:Any]){
     guard let title = dictionary["title"] as? String else{
       return nil
     }
