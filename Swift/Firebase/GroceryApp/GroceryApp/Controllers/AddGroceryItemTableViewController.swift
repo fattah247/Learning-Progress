@@ -12,8 +12,8 @@ protocol AddGroceryItemTableViewControllerDelegate{
   
   func addGroceryItemTableViewControllerDidCancel(controller: UIViewController)
   func addGroceryItemTableViewControllerDidSave(controller: UIViewController, groceryItem: GroceryItem)
-  
 }
+
 class AddGroceryItemTableViewController: UITableViewController{
   
   @IBOutlet weak var titleTextField: UITextField!

@@ -19,7 +19,6 @@ protocol AddShoppingListTableViewControllerDelegate{
 
 class AddShoppingListTableViewController: UITableViewController{
   
-  
   @IBOutlet weak var titleTextField: UITextField!
   var delegate: AddShoppingListTableViewControllerDelegate!
   

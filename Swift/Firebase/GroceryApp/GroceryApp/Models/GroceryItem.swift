@@ -15,7 +15,7 @@ class GroceryItem{
     self.title = title
   }
   
-  init?(dictionary:JSONDictionary){
+  init?(dictionary: JSONDictionary){
     
     guard let title = dictionary["title"] as? String else{
       return nil
@@ -24,7 +24,8 @@ class GroceryItem{
     self.title = title 
   }
   
+  //+ as any
   func toDictionary() -> [String:Any]{
-    return ["title":self.title]
+    return ["title":self.title as Any]
   }
 }
