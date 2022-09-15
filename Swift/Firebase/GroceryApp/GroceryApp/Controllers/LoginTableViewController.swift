@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Firebase
 import FirebaseCore
 import FirebaseAuth
 
@@ -16,7 +15,7 @@ enum AlertType : String{
   case message = "Success"
 }
 
-class LoginTableViewController: UITableView{
+class LoginTableViewController: UITableViewController{
   
   @IBOutlet weak var loginEmailTextField: UITextField!
   @IBOutlet weak var loginPasswordTextField: UITextField!
@@ -24,10 +23,12 @@ class LoginTableViewController: UITableView{
   @IBOutlet weak var registrationEmailTextField: UITextField!
   @IBOutlet weak var registrationPasswordTextField: UITextField!
   
-  
+  //MARK: - Action when login button is pressed
   @IBAction func loginButtonPressed(){
     
   }
+  
+  //MARK: - To register mail
   @IBAction func registerButtonPressed(){
     guard let email = self.registrationEmailTextField.text,
           let password = self.registrationPasswordTextField.text else{
@@ -35,6 +36,7 @@ class LoginTableViewController: UITableView{
     }
     
     Auth.auth().createUser(withEmail: email, password: password){ user, error in
+      
       if let error = error{
         self.showAlert(with: error.localizedDescription, alertType: .error)
       } else{

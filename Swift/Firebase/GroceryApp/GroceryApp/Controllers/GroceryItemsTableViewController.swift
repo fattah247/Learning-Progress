@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Firebase
 import FirebaseDatabase
 import FirebaseCore
 
@@ -29,6 +28,8 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
     self.rootRef = Database.database().reference()
   }
   
+  
+  //MARK: - Cancel
   func addGroceryItemTableViewControllerDidCancel(controller: UIViewController) {
     //To Close
     controller.dismiss(animated: true, completion: nil)
@@ -36,11 +37,11 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
   
   //MARK: -
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    
     if editingStyle == .delete{
       
       self.shoppingList.groceryItems.remove(at: indexPath.row)
       self.tableView.reloadData()
-      
     }
   }
   
@@ -48,11 +49,13 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
   func addGroceryItemTableViewControllerDidSave(controller: UIViewController, groceryItem: GroceryItem) {
     
     let shoppingListRef = self.rootRef.child(self.shoppingList.title)
+    
     self.shoppingList.groceryItems.append(groceryItem)
     
     shoppingListRef.setValue(self.shoppingList.toDictionary())
     
     self.shoppingList.groceryItems.append(groceryItem)
+    
     controller.dismiss(animated: true, completion: nil)
     
     DispatchQueue.main.async {
