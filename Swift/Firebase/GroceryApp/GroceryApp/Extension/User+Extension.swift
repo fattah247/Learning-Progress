@@ -15,7 +15,6 @@ extension User{
     guard let email = self.email else{
       fatalError("Unable to access email at the moment")
     }
-    
     return email.removeSpecialCharacters()
     
   }

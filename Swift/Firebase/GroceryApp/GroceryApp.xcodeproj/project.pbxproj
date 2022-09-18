@@ -28,6 +28,7 @@
 		F9559F3528C118130089C671 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9559F3428C118130089C671 /* LoginTableViewController.swift */; };
 		F9559F3728C1182B0089C671 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9559F3628C1182B0089C671 /* ShoppingListTableViewController.swift */; };
 		F9559F3B28C118C50089C671 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9559F3A28C118C50089C671 /* UIColor+Additions.m */; };
+		F9BD3CAA28D7667500811750 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD3CA928D7667500811750 /* String+Extensions.swift */; };
 		F9F0F1CC28C1D7E50098CDEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F0F1CB28C1D7E50098CDEA /* Main.storyboard */; };
 		FCDEABEDF5BAB3233A4C2CEB /* Pods_GroceryApp_GroceryAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DE32974F5DDAB3918C58F /* Pods_GroceryApp_GroceryAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		F9559F3628C1182B0089C671 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 		F9559F3928C118C40089C671 /* UIColor+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		F9559F3A28C118C50089C671 /* UIColor+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		F9BD3CA928D7667500811750 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		F9F0F1CA28C1D6ED0098CDEA /* GroceryApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroceryApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9F0F1CB28C1D7E50098CDEA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 			children = (
 				F932A6DA28D44E340099C966 /* User+Extension.swift */,
 				F953CAC128D5F9080039A253 /* Encodable+Extension.swift */,
+				F9BD3CA928D7667500811750 /* String+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				F9559F3728C1182B0089C671 /* ShoppingListTableViewController.swift in Sources */,
 				F9559EFC28C10C620089C671 /* AppDelegate.swift in Sources */,
 				F9559F3128C117E60089C671 /* AddShoppingListTableViewController.swift in Sources */,
+				F9BD3CAA28D7667500811750 /* String+Extensions.swift in Sources */,
 				F94FC9E728C3BB1500BEBC45 /* ShoppingList.swift in Sources */,
 				F94FC9E928C3BBAF00BEBC45 /* GroceryItem.swift in Sources */,
 				F9559EFE28C10C620089C671 /* SceneDelegate.swift in Sources */,
