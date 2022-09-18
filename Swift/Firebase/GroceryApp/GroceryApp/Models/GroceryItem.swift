@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GroceryItem{
+class GroceryItem : Codable{
   
   var title: String!
   
@@ -25,7 +25,7 @@ class GroceryItem{
   }
   
   //+ as any
-  func toDictionary() -> [String:Any]{
-    return ["title":self.title as Any]
-  }
+//  func toDictionary() -> [String:Any]{
+//    return ["title":self.title as Any]
+//  }
 }

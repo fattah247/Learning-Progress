@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 import FirebaseCore
+import FirebaseAuth
 
 class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTableViewControllerDelegate{
   
@@ -48,13 +49,17 @@ class GroceryItemsTableViewController: UITableViewController, AddGroceryItemTabl
   //MARK: - To Save
   func addGroceryItemTableViewControllerDidSave(controller: UIViewController, groceryItem: GroceryItem) {
     
-    let shoppingListRef = self.rootRef.child(self.shoppingList.title)
+    guard let user = Auth.auth().currentUser,
+          let email = user.email else{
+      return
+    }
     
     self.shoppingList.groceryItems.append(groceryItem)
     
-    shoppingListRef.setValue(self.shoppingList.toDictionary())
+    let userRef = self.rootRef.child(email.removeSpecialCharacters())
+    let shoppingListRef = userRef.child(self.shoppingList.title)
     
-    self.shoppingList.groceryItems.append(groceryItem)
+    shoppingListRef.setValue(try! self.shoppingList.toDictionary())
     
     controller.dismiss(animated: true, completion: nil)
     

@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		6C2F03ADF128EB1242FD63BD /* Pods_GroceryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E22363C3F734ECE6364A3AF /* Pods_GroceryApp.framework */; };
 		F0C7ED77E6F3E10F23C2080B /* Pods_GroceryAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6000E4CE2360449B256DA42B /* Pods_GroceryAppTests.framework */; };
+		F932A6DB28D44E340099C966 /* User+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932A6DA28D44E340099C966 /* User+Extension.swift */; };
 		F94FC9E728C3BB1500BEBC45 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94FC9E628C3BB1500BEBC45 /* ShoppingList.swift */; };
 		F94FC9E928C3BBAF00BEBC45 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94FC9E828C3BBAF00BEBC45 /* GroceryItem.swift */; };
+		F953CAC228D5F9080039A253 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953CAC128D5F9080039A253 /* Encodable+Extension.swift */; };
 		F9559EFC28C10C620089C671 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9559EFB28C10C620089C671 /* AppDelegate.swift */; };
 		F9559EFE28C10C620089C671 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9559EFD28C10C620089C671 /* SceneDelegate.swift */; };
 		F9559F0028C10C620089C671 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9559EFF28C10C620089C671 /* ViewController.swift */; };
@@ -57,8 +59,10 @@
 		A26F7B85E5EE669014E99D7B /* Pods-GroceryApp-GroceryAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryApp-GroceryAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GroceryApp-GroceryAppUITests/Pods-GroceryApp-GroceryAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB4E1AF4BFBF5D90AF2BF90B /* Pods-GroceryAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GroceryAppTests/Pods-GroceryAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD8FC7B2C3093E084C5265A3 /* Pods-GroceryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryApp.release.xcconfig"; path = "Target Support Files/Pods-GroceryApp/Pods-GroceryApp.release.xcconfig"; sourceTree = "<group>"; };
+		F932A6DA28D44E340099C966 /* User+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Extension.swift"; sourceTree = "<group>"; };
 		F94FC9E628C3BB1500BEBC45 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		F94FC9E828C3BBAF00BEBC45 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
+		F953CAC128D5F9080039A253 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		F9559EF828C10C620089C671 /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9559EFB28C10C620089C671 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9559EFD28C10C620089C671 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F932A6D928D44DF90099C966 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F932A6DA28D44E340099C966 /* User+Extension.swift */,
+				F953CAC128D5F9080039A253 /* Encodable+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		F94FC9E528C3BAEE00BEBC45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 		F9559EFA28C10C620089C671 /* GroceryApp */ = {
 			isa = PBXGroup;
 			children = (
+				F932A6D928D44DF90099C966 /* Extension */,
 				F94FC9E528C3BAEE00BEBC45 /* Models */,
 				F9559F2D28C1176F0089C671 /* Controllers */,
 				F9559EFB28C10C620089C671 /* AppDelegate.swift */,
@@ -459,12 +473,14 @@
 				F9559F2F28C117AF0089C671 /* AddGroceryItemTableViewController.swift in Sources */,
 				F9559F3B28C118C50089C671 /* UIColor+Additions.m in Sources */,
 				F9559F0028C10C620089C671 /* ViewController.swift in Sources */,
+				F953CAC228D5F9080039A253 /* Encodable+Extension.swift in Sources */,
 				F9559F3728C1182B0089C671 /* ShoppingListTableViewController.swift in Sources */,
 				F9559EFC28C10C620089C671 /* AppDelegate.swift in Sources */,
 				F9559F3128C117E60089C671 /* AddShoppingListTableViewController.swift in Sources */,
 				F94FC9E728C3BB1500BEBC45 /* ShoppingList.swift in Sources */,
 				F94FC9E928C3BBAF00BEBC45 /* GroceryItem.swift in Sources */,
 				F9559EFE28C10C620089C671 /* SceneDelegate.swift in Sources */,
+				F932A6DB28D44E340099C966 /* User+Extension.swift in Sources */,
 				F9559F3528C118130089C671 /* LoginTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
