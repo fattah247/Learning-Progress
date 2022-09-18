@@ -56,10 +56,11 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
       
       //Container of the the snapshot
       let shoppingListDictionary = snapshot.value as? [String:Any] ?? [:]
-      
       /*
        To go through the key inside the dictionary,
        and once we inside of the dict, we look for the actual key.
+       
+       -> Snapshot represents the value or the node at a certain point in time.
        */
       for (key, _) in shoppingListDictionary{
         /*
@@ -69,22 +70,28 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
         if let shoppingListDictionary = shoppingListDictionary[key] as? [String:Any]{
           
           if let shoppingList = ShoppingList(shoppingListDictionary){
+            /*Need initiaizer on ShoppingList Class (to check if the title is string),
+             before appending to global Variable.
+             */
             self.shoppingLists.append(shoppingList)
           }
         }
       }
+      
+      //Dispatch will make sure the function reload will happen in main thread or UI thread
       DispatchQueue.main.async {
+        //Reloading the tableView data
         self.tableView.reloadData()
       }
     }
   }
   
-  
+  //MARK: - When canceling additional Shopping list
   func addShoppingListTableViewControllerDidCancel(controller: UIViewController) {
     controller.dismiss(animated: true, completion: nil)
   }
   
-  
+  //MARK: When saving additional Shopping list
   func addShoppingListTableViewControllerDidSave(controller: UIViewController, title: String) {
     print(title)
     //To get the title of added shopping list
@@ -119,7 +126,7 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
     return cell
   }
   
-  
+  //MARK: - To prepare segue to grocery page (inside of the Shop list)
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     if segue.identifier == "AddShoppingListTableViewController"{
