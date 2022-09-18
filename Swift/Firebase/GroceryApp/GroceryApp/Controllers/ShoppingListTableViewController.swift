@@ -10,12 +10,16 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseCore
+import FirebaseAuth
 
 class ShoppingListTableViewController: UITableViewController, AddShoppingListTableViewControllerDelegate{
   
   private var shoppingLists = [ShoppingList]()
   //Database reference
   private var rootRef: DatabaseReference!
+  //To access user
+  let user: User = Auth.auth().currentUser!
+  
   
   override func viewDidLoad(){
     super.viewDidLoad()
@@ -36,19 +40,32 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
     }
   }
   
+  //MARK: - To populate data from Firebase
   private func populateShoppingLists(){
     
-    //Observing type of an event, any change in data will be observed
-    //snapshot will contain the root
-    self.rootRef.observe(.value){snapshot in
+    //MARK: Observing
+    /*
+    -> Observing type of an event, any change in data will be observed
+    -> Without the "Child", the "snapshot" will contain the root
+    -> Child would make it observes specifcally on the child of user.
+     */
+    self.rootRef.child(self.user.emailWithoutSpecialCharacters).observe(.value){snapshot in
       
       //After getting the snapshot, it will remove all view, before add the updated one
       self.shoppingLists.removeAll()
       
+      //Container of the the snapshot
       let shoppingListDictionary = snapshot.value as? [String:Any] ?? [:]
       
+      /*
+       To go through the key inside the dictionary,
+       and once we inside of the dict, we look for the actual key.
+       */
       for (key, _) in shoppingListDictionary{
-        
+        /*
+         Already inside of the dictionary,
+         Now here, we want to contain the actual key (in form of dictionary)
+         */
         if let shoppingListDictionary = shoppingListDictionary[key] as? [String:Any]{
           
           if let shoppingList = ShoppingList(shoppingListDictionary){
@@ -75,11 +92,13 @@ class ShoppingListTableViewController: UITableViewController, AddShoppingListTab
     //To add it to local variable
     self.shoppingLists.append(shoppingList)
     
+    let userRef = self.rootRef.child(self.user.emailWithoutSpecialCharacters)
+    
     //MARK: adding to Firebase
     //Giving reference
-    let shoppingListRef = self.rootRef.child(shoppingList.title)
+    let shoppingListRef = userRef.child(shoppingList.title)
     //Make a node with dictionary
-    shoppingListRef.setValue(shoppingList.toDictionary())
+    shoppingListRef.setValue(try! shoppingList.toDictionary())
     
     //To close the card after save it.
     controller.dismiss(animated: true, completion: nil)

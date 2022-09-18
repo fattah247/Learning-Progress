@@ -25,7 +25,19 @@ class LoginTableViewController: UITableViewController{
   
   //MARK: - Action when login button is pressed
   @IBAction func loginButtonPressed(){
+    guard let email = self.loginEmailTextField.text,
+          let password = self.loginPasswordTextField.text else{
+      return
+    }
     
+    Auth.auth().signIn(withEmail: email, password: password) { user, error in
+      if let error = error{
+        self.showAlert(with: error.localizedDescription, alertType: .error)
+        return
+      }
+      
+      self.performSegue(withIdentifier: "SuccessfulLoginSegue", sender: self)
+    }
   }
   
   //MARK: - To register mail

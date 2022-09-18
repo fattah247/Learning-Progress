@@ -8,7 +8,7 @@
 import Foundation
 typealias JSONDictionary = [String:Any]
 
-class ShoppingList{
+class ShoppingList : Codable{
   
   var title: String!
   var groceryItems: [GroceryItem] = [GroceryItem]()
@@ -32,9 +32,9 @@ class ShoppingList{
   
   //to convert object into dictionary representation
   //+ as any
-  func toDictionary() -> [String:Any]{
-    return ["title":self.title as Any, "groceryItems":self.groceryItems.map {groceryItem in
-      return groceryItem.toDictionary()
-    }]
-  }
+//  func toDictionary() -> [String:Any]{
+//    return ["title":self.title as Any, "groceryItems":self.groceryItems.map {groceryItem in
+//      return groceryItem.toDictionary()
+//    }]
+//  }
 }
