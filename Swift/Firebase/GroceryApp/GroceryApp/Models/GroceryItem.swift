@@ -15,8 +15,10 @@ class GroceryItem : Codable{
     self.title = title
   }
   
+  //MARK: - The initializer of Grocery Item
   init?(dictionary: JSONDictionary){
     
+    //The tilte here is the item name, not the shop (like cookies, etc)
     guard let title = dictionary["title"] as? String else{
       return nil
     }
