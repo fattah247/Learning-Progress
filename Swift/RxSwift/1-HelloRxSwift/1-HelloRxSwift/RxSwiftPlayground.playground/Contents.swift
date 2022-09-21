@@ -107,66 +107,104 @@ import RxCocoa
 let disposeBag = DisposeBag()
 
 //MARK: Publish Subject
-let subject = PublishSubject<String>()
-/*
- It's basically a subject that we can subscribe and also it can emit event.
- 
- It doesn't need any initial values to begin with.
- */
-
-subject.onNext("Issue 1") //Event Will not be run, if there is no one subscribes to it.
-
-subject.subscribe { event in
-  print(event)
-}  //Event will be run after it's subscribed.
-
-subject.onNext("Issue 2")
-subject.onNext("Issue 3")
-
-subject.onCompleted()
-subject.dispose() //If it's disposed, event below the disposed function will not be called
-
-subject.onNext("Issue 4")
-/*
- Subject is something special, because it is something that can emit values, and also observe it.
- 
- It is both the subsrciber and the observer.
- */
-
-//MARK: Behavior Subject
-//let subject = BehaviorSubject<String>(value: "Initial Value")
+//let subject = PublishSubject<String>()
+///*
+// It's basically a subject that we can subscribe and also it can emit event.
 //
-//subject onNext("Last Issue")
+// It doesn't need any initial values to begin with.
+// */
+//
+//subject.onNext("Issue 1") //Event Will not be run, if there is no one subscribes to it.
 //
 //subject.subscribe { event in
 //  print(event)
+//}  //Event will be run after it's subscribed.
+//
+//subject.onNext("Issue 2")
+//subject.onNext("Issue 3")
+//
+//subject.onCompleted()
+//subject.dispose() //If it's disposed, event below the disposed function will not be called
+//
+//subject.onNext("Issue 4")
+///*
+// Subject is something special, because it is something that can emit values, and also observe it.
+//
+// It is both the subsrciber and the observer.
+// */
+
+//MARK: Behavior Subject
+//let subject = BehaviorSubject<String>(value: "Initial Value")
+///*
+// Pretty similar to Publish Subject,
+// but Behavior subject need to pass initial value to initiate
+//
+// Reason to pass the value first:
+// - When It's subscribed, it'll give all value, or initial value, or the last value.
+// */
+//
+//subject.onNext("Last Issue")
+///*
+// It'll be still printed first,
+// according to its order.
+// */
+//
+//subject.subscribe { event in
+//  //The event that would be received is actually the last value it had, or the initial value
+//  print(event)
+//  //Will print the last value that is available.
 //}
 //
 //subject.onNext("Issue 1")
+//subject.onNext("Issue 2")
 
 //MARK: Replay subject
 //let subject = ReplaySubject<String>.create(bufferSize: 2)
+///*
+// Replay Subject will replay the event based on the buffer size that is set.
 //
+// Buffer size means, whenever new subscriber subscribe the subject,
+// they'll automatically replay the last two values that were ommited by the subject
+//*/
+///*
+// Without subscription, this issue will be emitted, but it will not shown
+//
+// Because it seems like, issues are posted, but no one listen to it.
+//*/
 //subject.onNext("Issue 1")
 //subject.onNext("Issue 2")
 //subject.onNext("Issue 3")
 //
 //subject.subscribe {
-//  print($0)
+//  print($0) // $0 is the event
+//  /*
+//   It will replay as much as the Buffer Size number has been given.
+//
+//   So because the buffersize value is 2, So it'll replay 2 lsat event.
+//  */
 //}
 //
+//
+////The same as above, but the event is different, with different subscription of events.
 //subject.onNext("Issue 4")
 //subject.onNext("Issue 5")
 //subject.onNext("Issue 6")
 //
 //print("[Subscription 2]")
 //subject.subscribe {
-//  print($0)
+//  print($0) //Will print the last 2 events, which are issues 5 and 6
 //}
 
 //MARK: Variables (BehaviorSubject has deprecated)
 ////Successor chosen is Behavior Relay
 //let variable = Variable([String]())
+///*
+// Variable Wraps behavior subject and stores its value in a state,
+// and we can using the value with value property.
+//
+// Since it's using behavior subject, it needs sort of initial value to a variable.
+// Initial value that we use is, an array, that we can append the data below.
+// */
 //
 //variable.value.append("Item 1")
 //
@@ -175,19 +213,27 @@ subject.onNext("Issue 4")
 //    print($0)
 //}
 //
-//variable.value.append("Item 2")
+//variable.value.append("Item 2") // It's added to the array
+//
+///*
+// So Variable subscription, after converting it into observable, will actually fired again and again whenever the value of the variable is changed.
+// It's useful because we often change the array on iOS application
+//*/
 
 //MARK: Behavior Relay
-//let relay = BehaviorRelay<String>(value: ["item 1"])
+//let relay = BehaviorRelay<Array>(value: ["item 1"])
+////It has to have an initial value.
 //
+////To Append the array, instead of replacing items every '.accpet()'
 //var value = relay.value
 //value.append("Item 2")
 //value.append("Item 3")
-//
-//
+////.accept() is mutable variable, that made us able to add item on array
 //relay.accept(value)
 //
-////relay.accept(relay.value + ["Item 2"])
+//
+//////Another way to do it.
+//////relay.accept(relay.value + ["Item 2"] + ["Item 3"])
 //
 //relay.asObservable()
 //  .subscribe {
