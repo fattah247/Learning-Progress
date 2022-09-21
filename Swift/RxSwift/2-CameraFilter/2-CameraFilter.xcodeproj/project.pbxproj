@@ -19,6 +19,7 @@
 		F9276AB528DB577C0004BA80 /* __CameraFilterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9276AB428DB577C0004BA80 /* __CameraFilterUITestsLaunchTests.swift */; };
 		F9276AC228DB63230004BA80 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9276AC128DB63230004BA80 /* PhotosCollectionViewController.swift */; };
 		F9276AC428DB64A30004BA80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9276AC328DB64A30004BA80 /* Main.storyboard */; };
+		F9AAFAE228DB89F000266FB9 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AAFAE128DB89F000266FB9 /* PhotoCollectionViewCell.swift */; };
 		FCD0F2413FDBADA1BA808F14 /* Pods_2_CameraFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43350879E18F09AE25362A /* Pods_2_CameraFilter.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		F9276AB428DB577C0004BA80 /* __CameraFilterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __CameraFilterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F9276AC128DB63230004BA80 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		F9276AC328DB64A30004BA80 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F9AAFAE128DB89F000266FB9 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,6 @@
 				9B8097E791565588B2124025 /* Pods-2-CameraFilterTests.debug.xcconfig */,
 				97134BB9A3E6CC6F71F8E620 /* Pods-2-CameraFilterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,6 +151,7 @@
 				F9276A9C28DB577C0004BA80 /* LaunchScreen.storyboard */,
 				F9276A9F28DB577C0004BA80 /* Info.plist */,
 				F9276AC128DB63230004BA80 /* PhotosCollectionViewController.swift */,
+				F9AAFAE128DB89F000266FB9 /* PhotoCollectionViewCell.swift */,
 			);
 			path = "2-CameraFilter";
 			sourceTree = "<group>";
@@ -411,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9276A9628DB577B0004BA80 /* ViewController.swift in Sources */,
+				F9AAFAE228DB89F000266FB9 /* PhotoCollectionViewCell.swift in Sources */,
 				F9276A9228DB577B0004BA80 /* AppDelegate.swift in Sources */,
 				F9276A9428DB577B0004BA80 /* SceneDelegate.swift in Sources */,
 				F9276AC228DB63230004BA80 /* PhotosCollectionViewController.swift in Sources */,
