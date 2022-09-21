@@ -48,6 +48,7 @@
 		A21C2DCFB6F38C652BC5B3D1 /* Pods-1-HelloRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1-HelloRxSwift.debug.xcconfig"; path = "Target Support Files/Pods-1-HelloRxSwift/Pods-1-HelloRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		C38F2A78DA184CF8F0BF5D02 /* Pods-1-HelloRxSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1-HelloRxSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-1-HelloRxSwiftTests/Pods-1-HelloRxSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4383C28EE1A67AC3B9F0DDC /* Pods_1_HelloRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_1_HelloRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9276A8428DB16C30004BA80 /* RxSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F9D9927C28DB0F7500FA652A /* 1-HelloRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1-HelloRxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D9927F28DB0F7500FA652A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D9928128DB0F7500FA652A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 				37112098A940EC5604026F75 /* Pods-1-HelloRxSwiftTests.debug.xcconfig */,
 				C38F2A78DA184CF8F0BF5D02 /* Pods-1-HelloRxSwiftTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,6 +147,7 @@
 				F9D9928828DB0F7600FA652A /* Assets.xcassets */,
 				F9D9928A28DB0F7600FA652A /* LaunchScreen.storyboard */,
 				F9D9928D28DB0F7600FA652A /* Info.plist */,
+				F9276A8428DB16C30004BA80 /* RxSwiftPlayground.playground */,
 			);
 			path = "1-HelloRxSwift";
 			sourceTree = "<group>";
