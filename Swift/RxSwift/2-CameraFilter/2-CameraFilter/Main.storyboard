@@ -4,11 +4,10 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera-->
+        <!--Camera Filter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="__CameraFilter" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,28 +18,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-as-KqC">
                                 <rect key="frame" x="0.0" y="91" width="375" height="609"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbI-u4-Add">
-                                <rect key="frame" x="127" y="708" width="121" height="52"/>
-                                <color key="backgroundColor" systemColor="systemMintColor"/>
-                                <color key="tintColor" red="0.94901961089999998" green="0.94509804249999996" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Apply filter"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRV-LM-NVm">
+                                <rect key="frame" x="148.66666666666666" y="711" width="78" height="30"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Apply Filter">
+                                    <color key="titleColor" red="0.99381813910000005" green="1" blue="0.98309177110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vk9-as-KqC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BYF-Xn-Jhy"/>
-                            <constraint firstItem="rbI-u4-Add" firstAttribute="centerX" secondItem="Vk9-as-KqC" secondAttribute="centerX" id="K4g-rS-mb1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rbI-u4-Add" secondAttribute="bottom" constant="18" id="Ril-GC-oUr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oRV-LM-NVm" secondAttribute="bottom" constant="37" id="JtV-ZA-gjH"/>
+                            <constraint firstItem="oRV-LM-NVm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="URi-c0-gcn"/>
                             <constraint firstItem="Vk9-as-KqC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WNi-Hh-QSR"/>
                             <constraint firstItem="Vk9-as-KqC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZDd-oD-lWK"/>
                             <constraint firstItem="Vk9-as-KqC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.75" id="gyN-ht-Zcf"/>
-                            <constraint firstItem="rbI-u4-Add" firstAttribute="top" secondItem="Vk9-as-KqC" secondAttribute="bottom" constant="8" symbolic="YES" id="vUH-sM-XBA"/>
-                            <constraint firstItem="rbI-u4-Add" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="ycB-n6-cSz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="Ad0-Dj-ZdA">
+                    <navigationItem key="navigationItem" title="Camera Filter" id="Ad0-Dj-ZdA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xaB-Am-tWs">
                             <connections>
                                 <segue destination="gur-cM-Amc" kind="presentation" id="kcS-o6-c8f"/>
@@ -50,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="132.26600985221674"/>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="rc3-wU-X5Y">
@@ -61,19 +58,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rwW-WH-dej">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="l0g-Ep-Cnz">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="l0g-Ep-Cnz" customClass="PhotoCollectionViewCell" customModule="__CameraFilter" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mf-0k-uOf">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="9mf-0k-uOf" firstAttribute="top" secondItem="l0g-Ep-Cnz" secondAttribute="top" id="Qof-hK-lo6"/>
+                                    <constraint firstItem="9mf-0k-uOf" firstAttribute="height" secondItem="l0g-Ep-Cnz" secondAttribute="height" id="Rq6-pg-10O"/>
+                                    <constraint firstItem="9mf-0k-uOf" firstAttribute="leading" secondItem="l0g-Ep-Cnz" secondAttribute="leading" id="SOv-bM-Vwi"/>
+                                    <constraint firstItem="9mf-0k-uOf" firstAttribute="width" secondItem="l0g-Ep-Cnz" secondAttribute="width" id="qks-Ju-Ivd"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="photoImageView" destination="9mf-0k-uOf" id="4GV-xt-xrn"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -124,9 +135,4 @@
             <point key="canvasLocation" x="2109.5999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
