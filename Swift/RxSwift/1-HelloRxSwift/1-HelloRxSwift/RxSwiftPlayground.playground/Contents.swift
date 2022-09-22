@@ -101,6 +101,7 @@ import PlaygroundSupport
 //}.subscribe(onNext: {print($0)}, onError: {print($0)}, onCompleted: {print("Completed!")}, onDisposed: {print("Disposed!")})
 //  .disposed(by: disposeBag)
 
+
 //MARK: -SUBJECT
 /*
  Subject will get event from someone (or something), and will forward the result to its subscriber.
@@ -241,12 +242,18 @@ let disposeBag = DisposeBag()
 //    print($0)
 //  }
 
+
 //MARK: -Filtering Operators
-let strikes = PublishSubject<String>()
 
 //MARK: Ignore Operator
+///*
+// .ignoreElements() will ignore all the elements. Although the element is ignored, the complete event is actually triggered
+// */
+//
+////Publish event that contains String
 //let strikes = PublishSubject<String>()
 //
+////Subscription
 //strikes
 //  .ignoreElements().subscribe { _ in
 //    print("[Subscription is called]")
@@ -257,8 +264,13 @@ let strikes = PublishSubject<String>()
 //strikes.onNext("C")
 //
 //strikes.onCompleted()
+////It will be the only thing that is called here, due to .ignoreElements()
 
 //MARK: Element At
+///*
+// Elemen At operator is used to call subscription when the index is already reaching the index number at the element that the operator stated.
+// */
+//
 //let strikes = PublishSubject<String>()
 //
 //strikes.element(at: 2)
@@ -271,71 +283,94 @@ let strikes = PublishSubject<String>()
 //strikes.onNext("X")
 
 //MARK: Filter
+///*
+// Operator that can be used to filter element (especially a sequence), according to the rule that has been given to the filter.
+// */
 //
 //Observable.of(1,2,3,4,5,6,7)
-//  .filter { $0 % 2 == 0}
+//  .filter { $0 % 2 == 0} //The Filter
 //  .subscribe(onNext: {
 //    print($0)
 //  }).disposed(by: disposeBag)
 
 //MARK: Skip
-//
+///*
+// Skipping element on the Subscription as much as the number that has been stated on this operator.
+// */
 //Observable.of("A","B","C","D","E","F")
 //  .skip(4).subscribe(onNext: { print($0)
 //  }).disposed(by: disposeBag)
 
 //MARK: Skip While
+///*
+// Skip While operator will skipping element, until the condition that is stated is NOT met.
+// After the state condition NOT met, the state will be granted to be part of the sequence
 //
+// ->It's updated operator
+// */
 //Observable.of(2,2,3,4,4)
-//  .skipWhile { $0 % 2 == 0}.subscribe(onNext: {print($0)
+//  .skip(while: { $0 % 2 == 0} ).subscribe(onNext: {print($0)
 //  }).disposed(by: disposeBag)
 
 //MARK: Skip Until
-//
+///*
+// This operator will wait the triger, until the triger has been met, the subscriber will get the next event (not the trigger)
+// */
 //let subject = PublishSubject<String>()
 //let trigger = PublishSubject<String>()
 //
-//subject.skipUntil(trigger)
+//subject.skip(until: trigger)
 //  .subscribe(onNext: {print($0)
 //  }).disposed(by: disposeBag)
 //
+////Will be ignored because there is no trigger yet.
 //subject.onNext("A")
 //subject.onNext("B")
 //
-//subject.onNext("X")
+////Triggering the subscriber.
+//trigger.onNext("X")
 //
 //subject.onNext("C")
 
 //MARK: Take
-//
+///*
+// This operator will take the item of the sequence as much as the value that is assigned to .take()
+// */
 //Observable.of(1,2,3,4,5,6)
 //  .take(3).subscribe(onNext: {
 //    print($0)
 //  }).disposed(by: disposeBag)
 
 //MARK: Take While
+///*
+// This Operator will take  the value of the event that is matched with the filter take(while:)
 //
+// -> Updated version takeWhile
+// */
 //Observable.of(2,4,6,7,8,10)
-//  .takeWhile {
+//  .take(while: {
 //    return $0 % 2 == 0
-//  }.subscribe(onNext: {
+//  }).subscribe(onNext: {
 //    print($0)
 //  }).disposed(by: disposeBag)
 
 //MARK: Take Until
+///*
+// This operator will select the value of the event until the trigger condition is trigger.
 //
+// So if it's triggered, th
+// */
 //let subject = PublishSubject<String>()
 //let trigger = PublishSubject<String>()
 //
-//subject.takeUntil(trigger)
-//  .subscribe(onNext: {
+//subject.take(until: trigger).subscribe(onNext: {
 //    print($0)
 //  }).disposed(by: disposeBag)
 //
 //subject.onNext("1")
 //subject.onNext("2")
 //
-//subject.onNext("X")
+//trigger.onNext("X")
 //
 //subject.onNext("3")
 
