@@ -24,6 +24,9 @@
                                 <state key="normal" title="Apply Filter">
                                     <color key="titleColor" red="0.99381813910000005" green="1" blue="0.98309177110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="applyFilterButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="25L-Mh-bcL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -45,7 +48,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="photoImageView" destination="Vk9-as-KqC" id="ZrQ-f0-hdC"/>
+                        <outlet property="applyFilterButton" destination="oRV-LM-NVm" id="y0H-0L-4XY"/>
+                        <outlet property="photoImageView" destination="Vk9-as-KqC" id="iS3-5z-AlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
