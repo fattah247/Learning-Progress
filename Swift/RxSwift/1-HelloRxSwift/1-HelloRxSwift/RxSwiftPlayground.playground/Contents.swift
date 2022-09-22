@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PlaygroundSupport
 
 //MARK: -OBSERVABLE
 //
@@ -239,3 +240,103 @@ let disposeBag = DisposeBag()
 //  .subscribe {
 //    print($0)
 //  }
+
+//MARK: -Filtering Operators
+let strikes = PublishSubject<String>()
+
+//MARK: Ignore Operator
+//let strikes = PublishSubject<String>()
+//
+//strikes
+//  .ignoreElements().subscribe { _ in
+//    print("[Subscription is called]")
+//  }.disposed(by: disposeBag)
+//
+//strikes.onNext("A")
+//strikes.onNext("B")
+//strikes.onNext("C")
+//
+//strikes.onCompleted()
+
+//MARK: Element At
+//let strikes = PublishSubject<String>()
+//
+//strikes.element(at: 2)
+//  .subscribe(onNext: { _ in
+//    print("You are out!")
+//  }).disposed(by: disposeBag)
+//
+//strikes.onNext("X")
+//strikes.onNext("X")
+//strikes.onNext("X")
+
+//MARK: Filter
+//
+//Observable.of(1,2,3,4,5,6,7)
+//  .filter { $0 % 2 == 0}
+//  .subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+
+//MARK: Skip
+//
+//Observable.of("A","B","C","D","E","F")
+//  .skip(4).subscribe(onNext: { print($0)
+//  }).disposed(by: disposeBag)
+
+//MARK: Skip While
+//
+//Observable.of(2,2,3,4,4)
+//  .skipWhile { $0 % 2 == 0}.subscribe(onNext: {print($0)
+//  }).disposed(by: disposeBag)
+
+//MARK: Skip Until
+//
+//let subject = PublishSubject<String>()
+//let trigger = PublishSubject<String>()
+//
+//subject.skipUntil(trigger)
+//  .subscribe(onNext: {print($0)
+//  }).disposed(by: disposeBag)
+//
+//subject.onNext("A")
+//subject.onNext("B")
+//
+//subject.onNext("X")
+//
+//subject.onNext("C")
+
+//MARK: Take
+//
+//Observable.of(1,2,3,4,5,6)
+//  .take(3).subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+
+//MARK: Take While
+//
+//Observable.of(2,4,6,7,8,10)
+//  .takeWhile {
+//    return $0 % 2 == 0
+//  }.subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+
+//MARK: Take Until
+//
+//let subject = PublishSubject<String>()
+//let trigger = PublishSubject<String>()
+//
+//subject.takeUntil(trigger)
+//  .subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+//
+//subject.onNext("1")
+//subject.onNext("2")
+//
+//subject.onNext("X")
+//
+//subject.onNext("3")
+
+
