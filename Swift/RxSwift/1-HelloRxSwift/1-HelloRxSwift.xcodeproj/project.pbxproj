@@ -6,6 +6,20 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		F9AAFAE728DD571B00266FB9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F9AAFAEA28DD571B00266FB9 /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+				F9AAFAEB28DD573000266FB9 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+			productName = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		702D03224A3658622FB6D511 /* Pods_1_HelloRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4383C28EE1A67AC3B9F0DDC /* Pods_1_HelloRxSwift.framework */; };
 		E2C02A625F609D8EB2658491 /* Pods_1_HelloRxSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A522B473E52C2F744C9780E /* Pods_1_HelloRxSwiftTests.framework */; };
@@ -240,6 +254,9 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					F9AAFAE728DD571B00266FB9 = {
+						CreatedOnToolsVersion = 14.0;
+					};
 					F9D9927B28DB0F7500FA652A = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -269,6 +286,7 @@
 				F9D9927B28DB0F7500FA652A /* 1-HelloRxSwift */,
 				F9D9929128DB0F7600FA652A /* 1-HelloRxSwiftTests */,
 				F9D9929B28DB0F7600FA652A /* 1-HelloRxSwiftUITests */,
+				F9AAFAE728DD571B00266FB9 /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
@@ -401,6 +419,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F9AAFAEB28DD573000266FB9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -466,6 +501,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F9AAFAE828DD571B00266FB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6RYV8J9924;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F9AAFAE928DD571B00266FB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6RYV8J9924;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F9D992A428DB0F7600FA652A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -721,6 +774,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F9AAFAEA28DD571B00266FB9 /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9AAFAE828DD571B00266FB9 /* Debug */,
+				F9AAFAE928DD571B00266FB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F9D9927728DB0F7500FA652A /* Build configuration list for PBXProject "1-HelloRxSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
