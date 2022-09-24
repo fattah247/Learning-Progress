@@ -145,11 +145,11 @@
 		F9276A9028DB577B0004BA80 /* 2-CameraFilter */ = {
 			isa = PBXGroup;
 			children = (
-				F9276A9128DB577B0004BA80 /* AppDelegate.swift */,
 				F9276A9328DB577B0004BA80 /* SceneDelegate.swift */,
 				F9276A9528DB577B0004BA80 /* ViewController.swift */,
 				F9276A9A28DB577C0004BA80 /* Assets.xcassets */,
 				F9AAFAE328DB920300266FB9 /* Main.storyboard */,
+				F9276A9128DB577B0004BA80 /* AppDelegate.swift */,
 				F9276A9C28DB577C0004BA80 /* LaunchScreen.storyboard */,
 				F9276A9F28DB577C0004BA80 /* Info.plist */,
 				F9276AC128DB63230004BA80 /* PhotosCollectionViewController.swift */,

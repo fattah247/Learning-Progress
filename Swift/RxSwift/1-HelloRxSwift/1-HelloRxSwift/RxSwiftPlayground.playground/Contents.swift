@@ -9,12 +9,13 @@ import PlaygroundSupport
 //let observable2 = Observable.of(1,2,3)
 //let observable3 = Observable.of([1,2,3])
 //let observable4 = Observable.from([1,2,3,4])
-///*Of means it'll function on that of (),
+///*
+// Of means it'll function on that of (),
 // While from, it will take what on that particular (), on each element of it
 //
-// That's why observable 3 is an array, and observable 4 is an integer
+// That's why observable3 is an array, and observable 4 is an integer
 // */
-//
+
 //MARK: 1.Subscriptions
 ///*
 // will get access to the value above (To Obeservable we observing)
@@ -48,8 +49,8 @@ import PlaygroundSupport
 //observable4.subscribe(onNext: {element in
 //  print(element)
 //})
-//
-//MARK: Dispossing anD Terminating
+
+//MARK: Dispossing and Terminating
 ///*
 // Subscription will always observing,
 // that's why we should have "Disposing" to stop this subscription observing, and prevent memory leak.
@@ -67,6 +68,7 @@ import PlaygroundSupport
 //
 // So that's why we have Another disposing methode, here:
 // */
+
 //MARK: Another Way for Disposing
 //
 ////Responsible for disposing
@@ -198,7 +200,7 @@ let disposeBag = DisposeBag()
 //}
 
 //MARK: Variables (BehaviorSubject has deprecated)
-////Successor chosen is Behavior Relay
+//Successor chosen is Behavior Relay
 //let variable = Variable([String]())
 ///*
 // Variable Wraps behavior subject and stores its value in a state,
@@ -243,7 +245,7 @@ let disposeBag = DisposeBag()
 //  }
 
 
-//MARK: -Filtering Operators
+//MARK: -FILTERING OPERATORS
 
 //MARK: Ignore Operator
 ///*
@@ -374,4 +376,210 @@ let disposeBag = DisposeBag()
 //
 //subject.onNext("3")
 
+
+//MARK: -TRANSFORMING OPERATORS
+/*
+ Allow us to change the observable data into a new sequence, transform it into a sequence that we are looking for.
+ 
+ -> Could be prepping from data which is coming from an observable that we may need to bind to a collection view or a table view.
+ -> Could be data that is coming from a Web Service and we want to transform it into a different form
+ */
+
+//MARK: To Array
+///*
+// Transform particular sequence into an array that contains the sequence's elements.
+// */
+//Observable.of(1,2,3,4,5)
+//.toArray()
+//.subscribe(onSuccess: {
+//  //To get the value, rather than using onNext, it can use onSuccess
+//        print($0)
+//    }).disposed(by: disposeBag)
+
+//MARK: Map
+///*
+// Map will go through on each element of the sequence, and perform operation we want on each element.
+// It will create a new other sequence.
+// */
+//Observable.of(1,2,3,4,5)
+//  .map {
+//    return $0 * 2
+//  }.subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+
+//MARK: Flat Map
+///*
+// Flat Map will project and transform an observable value and then flattens it down to a target observable
+// */
+//
+//struct Student {
+//  var score: BehaviorRelay<Int>
+//}
+//
+//let john = Student(score: BehaviorRelay(value: 75))
+//let mary = Student(score: BehaviorRelay(value: 95))
+//
+//let student = PublishSubject<Student>()
+//
+//student.asObservable()
+//  .flatMap { $0.score.asObservable()}
+//  .subscribe(onNext: {print($0)
+//  }).disposed(by: disposeBag)
+//
+//student.onNext(john)
+//john.score.accept(100) //Changing the Score
+//
+//student.onNext(mary)
+//
+//john.score.accept(80) //Changing the Score
+//john.score.accept(43) //Changing the Score
+//
+///*
+// When the values changes, it will fire the subscription.
+//
+// FlatMap  keeps tracking all things again and again <- this is what it means to "flattend down to a target observable"
+// -> Even though it's tracking mary, it also keeps tracking john
+//
+// -> Great for changing the internal observable and  flattening it out and returning an observable.
+// */
+
+
+//MARK: Flat Map Latest
+/*
+ FlatMap Latest will only observes to the latest observable  
+ */
+
+struct Student {
+  var score: BehaviorRelay<Int>
+}
+
+let john = Student(score: BehaviorRelay(value: 75))
+let mary = Student(score: BehaviorRelay(value: 95))
+
+let student = PublishSubject<Student>()
+
+student.asObservable()
+  .flatMapLatest{
+    $0.score
+      .asObservable()
+  }.subscribe(onNext: {
+    print($0)
+  }).disposed(by: disposeBag)
+
+student.onNext(john)
+john.score.accept(100)
+
+student.onNext(mary)
+john.score.accept(45)
+
+
+//MARK: -COMBINING OPERATORS
+
+//MARK: Starts With
+//
+//let numbers = Observable.of(2,3,4)
+//
+//let observable = numbers.startWith(1)
+//observable.subscribe(onNext: {
+//  print($0)
+//}).disposed(by: disposeBag)
+
+//MARK: Concat
+//let first = Observable.of(1,2,3)
+//let second = Observable.of(4,5,6)
+//
+//let observable = Observable.concat([first,second])
+//
+//observable.subscribe(onNext: {
+//  print($0)
+//}).disposed(by: disposeBag)
+
+//MARK: Merge
+//let left = PublishSubject<Int>()
+//let right = PublishSubject<Int>()
+//
+//let source = Observable.of(left.asObservable(),right.asObservable())
+//
+//let observable = source.merge()
+//observable.subscribe(onNext: {
+//  print($0)
+//}).disposed(by: disposeBag)
+//
+//left.onNext(5)
+//left.onNext(3)
+//right.onNext(2)
+//right.onNext(1)
+//left.onNext(99)
+
+//MARK: Combine Latest
+//let left = PublishSubject<Int>()
+//let right = PublishSubject<Int>()
+//
+//
+//let observable = Observable.combineLatest(left,right,resultSelector: {
+//  lastLeft, lastRight in "\(lastLeft) \(lastRight)"
+//})
+//
+//let disposable = observable.subscribe(onNext: {
+//  value in print(value)
+//})
+//
+//left.onNext(45)
+//right.onNext(1)
+//left.onNext(30)
+//right.onNext(99)
+//right.onNext(2)
+
+//MARK: With Latest From
+//
+//let button = PublishSubject<Void>()
+//let textField = PublishSubject<String>()
+//
+//let observable = button.withLatestFrom(textField)
+//let disposable = observable.subscribe(onNext: {
+//  print($0)
+//})
+//
+//textField.onNext("Sw")
+//textField.onNext("Swif")
+//textField.onNext("Swift")
+//textField.onNext("Swift Rocks!")
+//
+//button.onNext(())
+//button.onNext(())
+
+//MARK: Reduce
+//
+//let source = Observable.of(1,2,3)
+//
+//source.reduce(0,accumulator: +)
+//  .subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+//
+//source.reduce(0,accumulator: {
+//  summary, newValue in
+//  return summary + newValue
+//}).subscribe(onNext: {
+//  print($0)
+//}).disposed(by: disposeBag)
+
+//MARK: Scan
+//
+//let source = Observable.of(1,2,3,5,6)
+//
+//source.scan(0,accumulator: +)
+//  .subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+
+
+//MARK: - ERROR HANDLING
+
+//MARK: Throwing Erros
+
+//MARK: Handle Errors with Catch
+
+//MARK: Retrying Error
 
