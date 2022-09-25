@@ -32,14 +32,6 @@ import PlaygroundSupport
 //  }
 //}
 //
-//observable3.subscribe { event in
-//  if let element = event.element{
-//    print(element)
-//    /*
-//     It will print the entire array, because it's using 'of' which means will print all of the event.
-//     */
-//  }
-//}
 //
 ////OnNext
 ///*
@@ -105,12 +97,12 @@ import PlaygroundSupport
 
 
 //MARK: -SUBJECT
-/*
- Subject will get event from someone (or something), and will forward the result to its subscriber.
- */
-let disposeBag = DisposeBag()
-
-//MARK: Publish Subject
+///*
+// Subject will get event from someone (or something), and will forward the result to its subscriber.
+// */
+//let disposeBag = DisposeBag()
+//
+////MARK: Publish Subject
 //let subject = PublishSubject<String>()
 ///*
 // It's basically a subject that we can subscribe and also it can emit event.
@@ -200,7 +192,7 @@ let disposeBag = DisposeBag()
 //}
 
 //MARK: Variables (BehaviorSubject has deprecated)
-//Successor chosen is Behavior Relay
+////Successor chosen is Behavior Relay
 //let variable = Variable([String]())
 ///*
 // Variable Wraps behavior subject and stores its value in a state,
@@ -443,41 +435,41 @@ let disposeBag = DisposeBag()
 //
 // -> Great for changing the internal observable and  flattening it out and returning an observable.
 // */
-
+//
 
 //MARK: Flat Map Latest
-/*
- FlatMap Latest will only observes to the latest observable  
- */
-
-struct Student {
-  var score: BehaviorRelay<Int>
-}
-
-let john = Student(score: BehaviorRelay(value: 75))
-let mary = Student(score: BehaviorRelay(value: 95))
-
-let student = PublishSubject<Student>()
-
-student.asObservable()
-  .flatMapLatest{
-    $0.score
-      .asObservable()
-  }.subscribe(onNext: {
-    print($0)
-  }).disposed(by: disposeBag)
-
-student.onNext(john)
-john.score.accept(100)
-
-student.onNext(mary)
-john.score.accept(45)
+///*
+// FlatMap Latest will only observes to the latest observable
+// */
+//
+//struct Student {
+//  var score: BehaviorRelay<Int>
+//}
+//
+//let john = Student(score: BehaviorRelay(value: 75))
+//let mary = Student(score: BehaviorRelay(value: 95))
+//
+//let student = PublishSubject<Student>()
+//
+//student.asObservable()
+//  .flatMapLatest{
+//    $0.score
+//      .asObservable()
+//  }.subscribe(onNext: {
+//    print($0)
+//  }).disposed(by: disposeBag)
+//
+//student.onNext(john)
+//john.score.accept(100)
+//
+//student.onNext(mary)
+//john.score.accept(45)
 
 
 //MARK: -COMBINING OPERATORS
 
 //MARK: Starts With
-//
+
 //let numbers = Observable.of(2,3,4)
 //
 //let observable = numbers.startWith(1)
