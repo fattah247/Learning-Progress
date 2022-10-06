@@ -13,6 +13,7 @@
 		4E12349828D74B6900DB8931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E12349728D74B6900DB8931 /* Assets.xcassets */; };
 		4E12349B28D74B6900DB8931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E12349928D74B6900DB8931 /* LaunchScreen.storyboard */; };
 		F9CB6F9628EF0984004942DB /* ReusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB6F9528EF0984004942DB /* ReusableLabel.swift */; };
+		F9CB6F9828EF0C88004942DB /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB6F9728EF0C88004942DB /* ReusableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4E12349A28D74B6900DB8931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E12349C28D74B6900DB8931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9CB6F9528EF0984004942DB /* ReusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLabel.swift; sourceTree = "<group>"; };
+		F9CB6F9728EF0C88004942DB /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				4E12349028D74B6700DB8931 /* SceneDelegate.swift */,
 				4E12349228D74B6700DB8931 /* ViewController.swift */,
 				F9CB6F9528EF0984004942DB /* ReusableLabel.swift */,
+				F9CB6F9728EF0C88004942DB /* ReusableButton.swift */,
 				4E12349728D74B6900DB8931 /* Assets.xcassets */,
 				4E12349928D74B6900DB8931 /* LaunchScreen.storyboard */,
 				4E12349C28D74B6900DB8931 /* Info.plist */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E12349328D74B6700DB8931 /* ViewController.swift in Sources */,
+				F9CB6F9828EF0C88004942DB /* ReusableButton.swift in Sources */,
 				F9CB6F9628EF0984004942DB /* ReusableLabel.swift in Sources */,
 				4E12348F28D74B6700DB8931 /* AppDelegate.swift in Sources */,
 				4E12349128D74B6700DB8931 /* SceneDelegate.swift in Sources */,

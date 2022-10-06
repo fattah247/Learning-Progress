@@ -33,35 +33,38 @@ class ViewController: UIViewController {
 //        bodyLbl.translatesAutoresizingMaskIntoConstraints = false
 //        return bodyLbl
 //    }()
-    
-    private lazy var spacer: UIView = {
+  private lazy var spacer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.heightAnchor.constraint(equalToConstant: 10).isActive = true
         return view
     }()
     
-    private lazy var axeButton: UIButton = {
-        let blueBtn = UIButton()
-        blueBtn.backgroundColor = .blue
-        blueBtn.setTitle("Axe", for: .normal)
-        blueBtn.tintColor = .white
-        blueBtn.layer.cornerRadius = 5
-        blueBtn.clipsToBounds = true
-        blueBtn.translatesAutoresizingMaskIntoConstraints = false
-        return blueBtn
-    }()
-    
-    private lazy var gunButton: UIButton = {
-        let redBtn = UIButton()
-        redBtn.backgroundColor = .red
-        redBtn.setTitle("Gun", for: .normal)
-        redBtn.tintColor = .white
-        redBtn.layer.cornerRadius = 5
-        redBtn.clipsToBounds = true
-        redBtn.translatesAutoresizingMaskIntoConstraints = false
-        return redBtn
-    }()
+  
+//    private lazy var axeButton: UIButton = {
+//        let blueBtn = UIButton()
+//        blueBtn.backgroundColor = .blue
+//        blueBtn.setTitle("Axe", for: .normal)
+//        blueBtn.tintColor = .white
+//        blueBtn.layer.cornerRadius = 5
+//        blueBtn.clipsToBounds = true
+//        blueBtn.translatesAutoresizingMaskIntoConstraints = false
+//        return blueBtn
+//    }()
+//
+//    private lazy var gunButton: UIButton = {
+//        let redBtn = UIButton()
+//        redBtn.backgroundColor = .red
+//        redBtn.setTitle("Gun", for: .normal)
+//        redBtn.tintColor = .white
+//        redBtn.layer.cornerRadius = 5
+//        redBtn.clipsToBounds = true
+//        redBtn.translatesAutoresizingMaskIntoConstraints = false
+//        return redBtn
+//    }()
+  
+  private lazy var axeButton =  ReusableButton(buttonTitle: "Axe", clickButtonType: .axeButton)
+  private lazy var gunButton = ReusableButton(buttonTitle: "Gun", clickButtonType: .gunButton)
     
     private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [gunButton, axeButton])
