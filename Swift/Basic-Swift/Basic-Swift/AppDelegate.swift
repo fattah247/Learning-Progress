@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  3-NewsAppMVVM
+//  Basic-Swift
 //
-//  Created by Muhammad Abdul Fattah on 25/09/22.
+//  Created by Muhammad Abdul Fattah on 02/10/22.
 //
 
 import UIKit
@@ -14,15 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    
-    //To set the color of the bar
-    UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 0, green: 181, blue: 204, alpha: 1)
-    
-    //To Change the color of large Title
-    UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-    
-    //To change the color normal title
-    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     return true
   }
 

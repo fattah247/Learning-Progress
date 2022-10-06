@@ -21,7 +21,7 @@ extension ArticleListViewModel {
 
 extension ArticleListViewModel {
   
-  func articleat(_ index: Int) -> ArticleViewModel {
+  func articleAt(_ index: Int) -> ArticleViewModel {
     return self.articlesVM[index]
   }
 }
