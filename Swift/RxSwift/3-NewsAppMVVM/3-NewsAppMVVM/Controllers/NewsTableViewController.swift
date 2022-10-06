@@ -17,6 +17,7 @@ class NewsTableViewController: UITableViewController {
   override func viewDidLoad(){
     super.viewDidLoad()
     
+    //To prefer large Title
     self.navigationController?.navigationBar.prefersLargeTitles = true
     
     populateNews()
