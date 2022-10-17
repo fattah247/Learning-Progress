@@ -12,6 +12,13 @@
 		4E12349328D74B6700DB8931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12349228D74B6700DB8931 /* ViewController.swift */; };
 		4E12349828D74B6900DB8931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E12349728D74B6900DB8931 /* Assets.xcassets */; };
 		4E12349B28D74B6900DB8931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E12349928D74B6900DB8931 /* LaunchScreen.storyboard */; };
+		F948EF2228F3068B0088E07C /* MultipleChoiceWithTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948EF1E28F3068A0088E07C /* MultipleChoiceWithTextView.swift */; };
+		F948EF2328F3068B0088E07C /* BaseMulitpleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948EF1F28F3068B0088E07C /* BaseMulitpleChoiceView.swift */; };
+		F948EF2428F3068B0088E07C /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948EF2028F3068B0088E07C /* ScrollViewController.swift */; };
+		F948EF2528F3068B0088E07C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F948EF2128F3068B0088E07C /* Storyboard.storyboard */; };
+		F948EF2F28F3BBC50088E07C /* TextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948EF2D28F3BBC50088E07C /* TextFieldContainer.swift */; };
+		F948EF3028F3BBC50088E07C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948EF2E28F3BBC50088E07C /* Utilities.swift */; };
+		F948EF3228F3C2670088E07C /* ContohStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F948EF3128F3C2670088E07C /* ContohStoryboard.storyboard */; };
 		F9CB6F9628EF0984004942DB /* ReusableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB6F9528EF0984004942DB /* ReusableLabel.swift */; };
 		F9CB6F9828EF0C88004942DB /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB6F9728EF0C88004942DB /* ReusableButton.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +31,13 @@
 		4E12349728D74B6900DB8931 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E12349A28D74B6900DB8931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E12349C28D74B6900DB8931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F948EF1E28F3068A0088E07C /* MultipleChoiceWithTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceWithTextView.swift; sourceTree = "<group>"; };
+		F948EF1F28F3068B0088E07C /* BaseMulitpleChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMulitpleChoiceView.swift; sourceTree = "<group>"; };
+		F948EF2028F3068B0088E07C /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		F948EF2128F3068B0088E07C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		F948EF2D28F3BBC50088E07C /* TextFieldContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldContainer.swift; sourceTree = "<group>"; };
+		F948EF2E28F3BBC50088E07C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F948EF3128F3C2670088E07C /* ContohStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContohStoryboard.storyboard; sourceTree = "<group>"; };
 		F9CB6F9528EF0984004942DB /* ReusableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLabel.swift; sourceTree = "<group>"; };
 		F9CB6F9728EF0C88004942DB /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +72,8 @@
 		4E12348D28D74B6700DB8931 /* LearnUIProgrammatically */ = {
 			isa = PBXGroup;
 			children = (
+				F948EF2A28F3BAD70088E07C /* UiView Dummy */,
+				F948EF1D28F3067C0088E07C /* Dummy */,
 				4E12348E28D74B6700DB8931 /* AppDelegate.swift */,
 				4E12349028D74B6700DB8931 /* SceneDelegate.swift */,
 				4E12349228D74B6700DB8931 /* ViewController.swift */,
@@ -68,6 +84,27 @@
 				4E12349C28D74B6900DB8931 /* Info.plist */,
 			);
 			path = LearnUIProgrammatically;
+			sourceTree = "<group>";
+		};
+		F948EF1D28F3067C0088E07C /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				F948EF1F28F3068B0088E07C /* BaseMulitpleChoiceView.swift */,
+				F948EF1E28F3068A0088E07C /* MultipleChoiceWithTextView.swift */,
+				F948EF2028F3068B0088E07C /* ScrollViewController.swift */,
+				F948EF2128F3068B0088E07C /* Storyboard.storyboard */,
+			);
+			path = Dummy;
+			sourceTree = "<group>";
+		};
+		F948EF2A28F3BAD70088E07C /* UiView Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				F948EF2D28F3BBC50088E07C /* TextFieldContainer.swift */,
+				F948EF2E28F3BBC50088E07C /* Utilities.swift */,
+				F948EF3128F3C2670088E07C /* ContohStoryboard.storyboard */,
+			);
+			path = "UiView Dummy";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +167,8 @@
 			files = (
 				4E12349B28D74B6900DB8931 /* LaunchScreen.storyboard in Resources */,
 				4E12349828D74B6900DB8931 /* Assets.xcassets in Resources */,
+				F948EF3228F3C2670088E07C /* ContohStoryboard.storyboard in Resources */,
+				F948EF2528F3068B0088E07C /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +181,13 @@
 			files = (
 				4E12349328D74B6700DB8931 /* ViewController.swift in Sources */,
 				F9CB6F9828EF0C88004942DB /* ReusableButton.swift in Sources */,
+				F948EF2228F3068B0088E07C /* MultipleChoiceWithTextView.swift in Sources */,
+				F948EF2428F3068B0088E07C /* ScrollViewController.swift in Sources */,
+				F948EF2F28F3BBC50088E07C /* TextFieldContainer.swift in Sources */,
 				F9CB6F9628EF0984004942DB /* ReusableLabel.swift in Sources */,
 				4E12348F28D74B6700DB8931 /* AppDelegate.swift in Sources */,
+				F948EF2328F3068B0088E07C /* BaseMulitpleChoiceView.swift in Sources */,
+				F948EF3028F3BBC50088E07C /* Utilities.swift in Sources */,
 				4E12349128D74B6700DB8931 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
