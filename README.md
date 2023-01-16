@@ -12,7 +12,7 @@ The projects have been numbered according to the order based on the development 
 
 ## What to pay attention to? ##
 
-Some of the projects are not private but available from the course, and I added some changes and comments. I will include the author's name and course source in each project. Please mind the project creator.
+Some of the projects are not personal projects but available from the course, and I added some changes and comments. I will include the author's name and course source in each project. Please mind the project creator.
 
 ## Contribution guidelines ##
 You could contact me on my LinkedIn or email to contribute or give some critiques, which I mentioned below. 
