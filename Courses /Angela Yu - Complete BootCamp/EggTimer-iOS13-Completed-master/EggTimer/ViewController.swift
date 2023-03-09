@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    //This Dictionary is better than using 3 constant
     let eggTimes = ["Soft": 3, "Medium": 4, "Hard": 7]
+    
     var timer = Timer()
     var player: AVAudioPlayer!
     var totalTime = 0
@@ -21,10 +24,16 @@ class ViewController: UIViewController {
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
         
+        /*It will prevent the timer to go faster as we pressed the
+         button, and start over
+         
+         It will also restart the timer, fromthe selected hardness*/
         timer.invalidate()
+        
         let hardness = sender.currentTitle!
         //sender is refering to the object that is interacted with this function (or being sent into this function)
         
+        //It will take the number that have key that is provided in dictionary.
         totalTime = eggTimes[hardness]!
 
         progressBar.progress = 0.0
