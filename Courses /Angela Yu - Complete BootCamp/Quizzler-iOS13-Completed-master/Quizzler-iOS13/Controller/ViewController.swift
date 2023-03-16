@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    //This variable would use Struct (or our own data type), so the properties of it can be used.
     var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
@@ -41,6 +42,8 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
+    
+    //This function would allow the UI be updated whenever the Function is called, one of which is on the viewDidLoad()
     @objc func updateUI() {
         questionLabel.text = quizBrain.getQuestionText()
         progressBar.progress = quizBrain.getProgress()

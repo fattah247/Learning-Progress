@@ -8,6 +8,11 @@
 
 import Foundation
 
+
+/*
+ Struct can be given some actions using function,
+ and not only characteristics using variables and constants
+ */
 struct QuizBrain {
     
     var questionNumber = 0
