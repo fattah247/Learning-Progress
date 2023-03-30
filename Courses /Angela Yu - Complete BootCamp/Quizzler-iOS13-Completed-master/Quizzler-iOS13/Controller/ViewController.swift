@@ -39,6 +39,13 @@ class ViewController: UIViewController {
         
         quizBrain.nextQuestion()
         
+        
+        /*
+         This timer would clear the background color of the button after 0.2 seconds.
+         
+         This code will ensure that Green or Red Color will appear for 0.2 seconds.
+         If this updateUI() is called directly, the Green and Red Color will not be apparent. 
+         */
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     

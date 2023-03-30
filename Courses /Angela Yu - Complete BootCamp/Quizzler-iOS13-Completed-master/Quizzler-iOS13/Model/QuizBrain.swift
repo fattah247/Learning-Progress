@@ -10,8 +10,13 @@ import Foundation
 
 
 /*
+ Struct is a blueprint for a type of object to exist. If Struct is a blueprint, then variable and constant would be what it's like, and function is what it can do. 
+ 
  Struct can be given some actions using function,
  and not only characteristics using variables and constants
+ 
+ -> The Action here is called "Methods"
+ -> The Variables and Constants are called "Properties"
  */
 struct QuizBrain {
     
@@ -45,7 +50,7 @@ struct QuizBrain {
         return score
     }
     
-     mutating func nextQuestion() {
+    mutating func nextQuestion() {
         
         if questionNumber + 1 < quiz.count {
             questionNumber += 1
