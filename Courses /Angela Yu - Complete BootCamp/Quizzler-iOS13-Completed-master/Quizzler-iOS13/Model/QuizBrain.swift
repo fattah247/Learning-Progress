@@ -59,6 +59,12 @@ struct QuizBrain {
         }
     }
     
+    /*
+     When struct is made in the background, its property is defined with the "let" keyword, which make it immutable to change
+     
+     Mutating Function is one of method to change the property or the struct itself, so it become mutable
+     */
+    
     mutating func checkAnswer(userAnswer: String) -> Bool {
         if userAnswer == quiz[questionNumber].answer {
             score += 1

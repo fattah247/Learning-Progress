@@ -17,7 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     //This variable would use Struct (or our own data type), so the properties of it can be used.
+    
+    //Whenever you make a struct variable, make sure it's variable and not "let" or constant, so the properties inside can be accessed.
     var quizBrain = QuizBrain()
+    
+    /*
+     So the Struct that has been made on the model can be used in any controller as much as we want, but we have to make the variable that can be used first
+     */
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +54,7 @@ class ViewController: UIViewController {
          This timer would clear the background color of the button after 0.2 seconds.
          
          This code will ensure that Green or Red Color will appear for 0.2 seconds.
-         If this updateUI() is called directly, the Green and Red Color will not be apparent. 
+         If this updateUI() is called directly, the Green and Red Color will not be apparent.
          */
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
