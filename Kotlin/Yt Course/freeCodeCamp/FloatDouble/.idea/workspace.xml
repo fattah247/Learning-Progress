@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2bacc5f-fb5c-4828-b59c-91627870b9eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo.xcodeproj/xcuserdata/fatta_7.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo/ContentView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo/Legion_DemoApp.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Legion Demo/Legion Demo/Preview Content/Preview Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI.xcodeproj/xcuserdata/fatta_7.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI/ContentView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI/DragFeatureSwiftUIApp.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/DragFeatureSwiftUI/DragFeatureSwiftUI/Preview Content/Preview Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop.xcodeproj/xcuserdata/fatta_7.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/Model/Toy.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/Preview Content/Preview Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/SwiftUI_DragAndDropApp.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/Views/BabyToyView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Swift/Non-Course/SwiftUI-DragAndDrop/SwiftUI-DragAndDrop/Views/DraggableToy.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/DataTypes.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataTypes/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Swift/Courses /Angela Yu - Complete BootCamp/BMI-Calculator-iOS13-Completed-master/BMI Calculator.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Swift/Courses /Angela Yu - Complete BootCamp/BMI-Calculator-iOS13-Completed-master/BMI Calculator.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Swift/Courses /Angela Yu - Complete BootCamp/EggTimer-iOS13-Completed-master/EggTimer.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Swift/Courses /Angela Yu - Complete BootCamp/EggTimer-iOS13-Completed-master/EggTimer.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Swift/Courses /Angela Yu - Complete BootCamp/Quizzler-iOS13-Completed-master/Quizzler-iOS13.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Swift/Courses /Angela Yu - Complete BootCamp/Quizzler-iOS13-Completed-master/Quizzler-iOS13.xcodeproj/project.xcworkspace/xcuserdata/fatta_7.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2PVyhndkDkL8QqZsLCFmwT3u4kj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2bacc5f-fb5c-4828-b59c-91627870b9eb" name="Changes" comment="" />
+      <created>1683556664550</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683556664550</updated>
+    </task>
+    <servers />
+  </component>
+</project>

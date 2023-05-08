@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "legion-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "ssh://git@gitlab.playcourt.id:31022/mobileteam/legion-ios.git",
+      "state" : {
+        "revision" : "9ff7e71f75682d962cf1f31b0a171dc2728969db",
+        "version" : "2.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
